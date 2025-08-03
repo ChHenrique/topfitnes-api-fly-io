@@ -16,8 +16,8 @@ RUN pnpm exec prisma generate
 # Aplica as migrações no banco
 RUN pnpm exec prisma migrate deploy
 
-# Expõe a porta (ajusta se for diferente)
-EXPOSE 3000
+# Compila o TypeScript
+RUN pnpm run build
 
 # Roda o servidor compilado
-CMD ["pnpm", "dev"]
+CMD ["pnpm", "start"]

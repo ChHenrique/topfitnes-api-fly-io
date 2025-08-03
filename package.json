@@ -1,16 +1,16 @@
 {
   "name": "topfitness-api",
-  "type": "module",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
-"scripts": {
-  "dev": "tsx src/server.ts",
-  "build": "tsc",
-  "start": "node -r tsconfig-paths/register dist/server.js",
-  "generate": "prisma generate",
-  "migrate": "prisma migrate dev"
-},
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsc && node fix-imports.cjs",
+    "start": "node dist/server.js",
+    "generate": "prisma generate",
+    "migrate": "prisma migrate dev"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -34,10 +34,13 @@
     "zod": "^4.0.5"
   },
   "devDependencies": {
+    "@swc/cli": "^0.7.8",
+    "@swc/core": "^1.13.3",
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.14",
     "prisma": "^6.12.0",
+    "replace-in-file": "^8.3.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }
