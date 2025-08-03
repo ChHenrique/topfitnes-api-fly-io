@@ -1,14 +1,14 @@
 import { FastifyInstance } from "fastify";
-import { createAdminController } from "src/controllers/admin/createAdminController";
-import { deleteAdminController } from "src/controllers/admin/deleteAdminController";
-import { getAdminController } from "src/controllers/admin/getAdminController";
-import { getAllAdminController } from "src/controllers/admin/getAllAdminController";
-import { loginAdminController } from "src/controllers/admin/loginAdminController";
-import { logoutAdminController } from "src/controllers/admin/logoutAdminController";
-import { updateAdminController } from "src/controllers/admin/updateAdminController";
-import { overdueStudentController } from "src/controllers/personal/overdueStudentPersonalController";
-import { updateValidityController } from "src/controllers/admin/updateValidityStudentController";
-import { authMiddleware } from "src/middlewares/authMiddleware";
+import { createAdminController } from "../controllers/admin/createAdminController";
+import { deleteAdminController } from "../controllers/admin/deleteAdminController";
+import { getAdminController } from "../controllers/admin/getAdminController";
+import { getAllAdminController } from "../controllers/admin/getAllAdminController";
+import { loginAdminController } from "../controllers/admin/loginAdminController";
+import { logoutAdminController } from "../controllers/admin/logoutAdminController";
+import { updateAdminController } from "../controllers/admin/updateAdminController";
+import { overdueStudentController } from "../controllers/personal/overdueStudentPersonalController";
+import { updateValidityController } from "../controllers/admin/updateValidityStudentController";
+import { authMiddleware } from "../middlewares/authMiddleware";
 
 export async function adminRoutes(fastify: FastifyInstance) {
     fastify.get('/admin/:id', { preHandler: authMiddleware }, async (req, res) => await getAdminController({ req, res }));

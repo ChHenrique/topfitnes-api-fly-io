@@ -1,13 +1,13 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { personalSchema, PersonalSchemaDTO } from "src/schemas/personalSchema";
-import { getPersonalById, updatePersonal } from "src/services/database/IPersonalRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
-import { typeUploads } from "src/types/typeUploads";
-import { checkAccess } from "src/utils/checkAccess";
-import { updateUserPhotoMultipart } from "src/utils/photoMultipart";
-import { updatedFields } from "src/utils/updateFields";
-import { verifyEmailOrPhoneExistUpdate } from "src/utils/verifyEmailOrPhoneExist";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { personalSchema, PersonalSchemaDTO } from "../../schemas/personalSchema";
+import { getPersonalById, updatePersonal } from "../../services/database/IPersonalRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
+import { typeUploads } from "../../types/typeUploads";
+import { checkAccess } from "../../utils/checkAccess";
+import { updateUserPhotoMultipart } from "../../utils/photoMultipart";
+import { updatedFields } from "../../utils/updateFields";
+import { verifyEmailOrPhoneExistUpdate } from "../../utils/verifyEmailOrPhoneExist";
 import bcrypt from "bcrypt";
 
 export async function updatePersonalController(fastify: fastifyContextDTO) {

@@ -1,9 +1,9 @@
 import { Prisma, Role } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { studentSchemaDTO } from "src/schemas/studentSchema";
-import { getStartAndEndOfCurrentMonth } from "src/utils/getStartAndEndOfCurrentMonth";
+import { prisma } from "../../config/prisma";
+import { studentSchemaDTO } from "../../schemas/studentSchema";
+import { getStartAndEndOfCurrentMonth } from "../../utils/getStartAndEndOfCurrentMonth";
 import { ServerError } from "../serverError";
-import { validateRelationships } from "src/utils/validateRelationships";
+import { validateRelationships } from "../../utils/validateRelationships";
 import { includes } from "zod";
 
 export async function createStudent(data: studentSchemaDTO, dateValidity: Date) {

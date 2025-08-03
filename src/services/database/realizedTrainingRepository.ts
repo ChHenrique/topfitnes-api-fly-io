@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { realizedTrainingSchemaDTO } from "src/schemas/realizedTrainingSchema";
+import { prisma } from "../../config/prisma";
+import { realizedTrainingSchemaDTO } from "../../schemas/realizedTrainingSchema";
 
 export async function createRealizedTraining(data: realizedTrainingSchemaDTO) {
     const realizedTraining = await prisma.treinoRealizado.create({

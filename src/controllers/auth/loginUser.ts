@@ -1,12 +1,12 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { loginAdminSchema, LoginAdminSchemaDTO } from "src/schemas/adminSchema";
-import { getUserByEmail, getUserByPhone } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { loginAdminSchema, LoginAdminSchemaDTO } from "../../schemas/adminSchema";
+import { getUserByEmail, getUserByPhone } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
 import bcrypt from 'bcrypt'
-import { timeValidityJWT } from "src/utils/timeValidityJWT";
-import { payloadJWT } from "src/utils/payloadJWT";
+import { timeValidityJWT } from "../../utils/timeValidityJWT";
+import { payloadJWT } from "../../utils/payloadJWT";
 import jwt from "jsonwebtoken"
-import { validateStudentPlan } from "src/services/planService";
+import { validateStudentPlan } from "../../services/planService";
 
 export async function loginUserController(fastify: fastifyContextDTO){
     const body = fastify.req.body as LoginAdminSchemaDTO;

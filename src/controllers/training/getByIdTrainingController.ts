@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getTrainingById } from "src/services/database/ItrainingRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getTrainingById } from "../../services/database/ITrainingRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getByIdTrainingController(fastify: fastifyContextDTO) {
     const { user, params } = fastify.req;

@@ -1,5 +1,5 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../interfaces/fastifyContextDTO";
+import { ServerError } from "../services/serverError";
 
 export async function checkAccess(fastify: fastifyContextDTO, getUserById: Function) {
     const user = fastify.req.user;

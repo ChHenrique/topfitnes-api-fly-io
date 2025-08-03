@@ -1,8 +1,8 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { deleteStudent, getStudentByEmail } from "src/services/database/IStudentRepository";
-import { getUserById } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
-import { checkAccessWithPersonal } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { deleteStudent, getStudentByEmail } from "../../services/database/IStudentRepository";
+import { getUserById } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
+import { checkAccessWithPersonal } from "../../utils/checkAccess";
 
 export async function deleteStudentController(fastify: fastifyContextDTO) {
     const isStudent = await checkAccessWithPersonal(fastify, getUserById);

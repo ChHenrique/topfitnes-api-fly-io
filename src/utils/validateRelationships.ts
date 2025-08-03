@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { ServerError } from "src/services/serverError";
+import { prisma } from "../config/prisma";
+import { ServerError } from "../services/serverError";
 
 export async function validateRelationships(planoId: string, personalId?: string) {
   const planoExists = await prisma.plano.count({ where: { id: planoId } });

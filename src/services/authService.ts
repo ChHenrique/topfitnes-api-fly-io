@@ -1,9 +1,9 @@
-import { userLoginSchema, UserLoginSchemaDTO } from "src/schemas/userSchema";
-import { getUserByEmail, getUserByPhone } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
+import { userLoginSchema, UserLoginSchemaDTO } from "../schemas/userSchema";
+import { getUserByEmail, getUserByPhone } from "../services/database/IUserRepository";
+import { ServerError } from "../services/serverError";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { payloadJWT } from "src/utils/payloadJWT";
+import { payloadJWT } from "../utils/payloadJWT";
 import { FastifyReply, FastifyRequest } from "fastify";
 
 export const validateLoginInput = (data: unknown): UserLoginSchemaDTO => {

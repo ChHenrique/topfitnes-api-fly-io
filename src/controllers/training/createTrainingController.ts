@@ -1,11 +1,11 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { trainingSchema, TrainingSchemaDTO } from "src/schemas/trainingSchema";
-import { getPersonalByEmail } from "src/services/database/IPersonalRepository";
-import { createTraining } from "src/services/database/ItrainingRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
-import { typeUploads } from "src/types/typeUploads";
-import { createUserPhotoMultipart } from "src/utils/photoMultipart";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { trainingSchema, TrainingSchemaDTO } from "../../schemas/trainingSchema";
+import { getPersonalByEmail } from "../../services/database/IPersonalRepository";
+import { createTraining } from "../../services/database/ITrainingRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
+import { typeUploads } from "../../types/typeUploads";
+import { createUserPhotoMultipart } from "../../utils/photoMultipart";
 
 export async function createTrainingController(fastify: fastifyContextDTO) {
     const { user, body } = fastify.req;

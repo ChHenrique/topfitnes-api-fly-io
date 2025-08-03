@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { temporaryStudentSchemaDTO } from "src/schemas/temporaryStudentSchema";
+import { prisma } from "../../config/prisma";
+import { temporaryStudentSchemaDTO } from "../../schemas/temporaryStudentSchema";
 
 export async function createTemporaryStudent(data: temporaryStudentSchemaDTO){
     const temporaryStudent = await prisma.alunosTemporarios.create({

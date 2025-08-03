@@ -1,12 +1,12 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
 import {
   deletePersonal,
 
   getPersonalById,
-} from "src/services/database/IPersonalRepository";
-import { getUserById } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
-import { checkAccess } from "src/utils/checkAccess";
+} from "../../services/database/IPersonalRepository";
+import { getUserById } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
+import { checkAccess } from "../../utils/checkAccess";
 
 export async function deletePersonalController(fastify: fastifyContextDTO) {
   const { id } = fastify.req.params as { id: string };

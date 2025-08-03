@@ -1,7 +1,7 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { prisma } from "src/config/prisma";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { prisma } from "../../config/prisma";
 import { DiaSemana } from "@prisma/client";
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../../services/serverError";
 
 export async function updateWeekDayController(fastify: fastifyContextDTO) {
   const { id } = fastify.req.params as { id: string };

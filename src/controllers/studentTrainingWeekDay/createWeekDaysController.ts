@@ -1,8 +1,8 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { studentTrainingDayWeekSchema } from "src/schemas/studentTrainingDayWeek";
-import { createWeekDays } from "src/services/database/studentTrainingDayWeekRepository";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { studentTrainingDayWeekSchema } from "../../schemas/studentTrainingDayWeek";
+import { createWeekDays } from "../../services/database/studentTrainingDayWeekRepository";
 
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../../services/serverError";
 
 
 export async function createWeekDaysController(fastify: fastifyContextDTO) {

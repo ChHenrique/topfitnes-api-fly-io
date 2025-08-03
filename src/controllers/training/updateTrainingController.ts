@@ -1,10 +1,10 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { trainingSchema, TrainingSchemaDTO } from "src/schemas/trainingSchema";
-import { getTrainingById, updateTraining } from "src/services/database/ItrainingRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
-import { typeUploads } from "src/types/typeUploads";
-import { updateUserPhotoMultipart } from "src/utils/photoMultipart";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { trainingSchema, TrainingSchemaDTO } from "../../schemas/trainingSchema";
+import { getTrainingById, updateTraining } from "../../services/database/ITrainingRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
+import { typeUploads } from "../../types/typeUploads";
+import { updateUserPhotoMultipart } from "../../utils/photoMultipart";
 
 export async function updateTrainingController(fastify: fastifyContextDTO) {
     const { user, body, params } = fastify.req;

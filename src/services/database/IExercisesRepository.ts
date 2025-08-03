@@ -1,6 +1,6 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma";
 import { ServerError } from "../serverError";
-import { exerciseDTO } from "src/schemas/exerciseSchema";
+import { exerciseDTO } from "../../schemas/exerciseSchema";
 
 export async function createExercise(data: exerciseDTO) {
     const exercise = await prisma.exercicio.create({

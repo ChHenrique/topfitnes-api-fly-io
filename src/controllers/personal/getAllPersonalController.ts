@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getAllPersonals } from "src/services/database/IPersonalRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getAllPersonals } from "../../services/database/IPersonalRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getAllPersonalController(fastify: fastifyContextDTO){
     const user = fastify.req.user;

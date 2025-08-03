@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getUserById } from "src/services/database/IUserRepository";
-import { checkAccessWithPersonal } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getUserById } from "../../services/database/IUserRepository";
+import { checkAccessWithPersonal } from "../../utils/checkAccess";
 
 export async function getStudentController(fastify: fastifyContextDTO) {
 

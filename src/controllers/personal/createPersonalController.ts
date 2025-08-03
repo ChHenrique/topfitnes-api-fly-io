@@ -1,13 +1,13 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { personalSchema, PersonalSchemaDTO } from "src/schemas/personalSchema";
-import { createPersonal, getPersonalByEmail, getPersonalByPhone } from "src/services/database/IPersonalRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { personalSchema, PersonalSchemaDTO } from "../../schemas/personalSchema";
+import { createPersonal, getPersonalByEmail, getPersonalByPhone } from "../../services/database/IPersonalRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
 import bcrypt from "bcrypt";
-import { typeUploads } from "src/types/typeUploads";
-import { photoStorageService } from "src/services/photoStorageService";
-import { createUserPhotoMultipart } from "src/utils/photoMultipart";
-import { verifyEmailOrPhoneExist } from "src/utils/verifyEmailOrPhoneExist";
+import { typeUploads } from "../../types/typeUploads";
+import { photoStorageService } from "../../services/photoStorageService";
+import { createUserPhotoMultipart } from "../../utils/photoMultipart";
+import { verifyEmailOrPhoneExist } from "../../utils/verifyEmailOrPhoneExist";
 
 export async function createPersonalController(fastify: fastifyContextDTO) {
     const user = fastify.req.user;

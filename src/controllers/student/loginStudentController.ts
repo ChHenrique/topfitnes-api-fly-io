@@ -1,10 +1,10 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { loginStudentSchema, LoginStudentSchemaDTO } from "src/schemas/studentSchema";
-import { getStudentByEmail, getStudentByPhone } from "src/services/database/IStudentRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { loginStudentSchema, LoginStudentSchemaDTO } from "../../schemas/studentSchema";
+import { getStudentByEmail, getStudentByPhone } from "../../services/database/IStudentRepository";
+import { ServerError } from "../../services/serverError";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { timeValidityJWT } from "src/utils/timeValidityJWT";
+import { timeValidityJWT } from "../../utils/timeValidityJWT";
 
 export async function loginStudentController(fastify: fastifyContextDTO){
     const data = fastify.req.body as LoginStudentSchemaDTO;

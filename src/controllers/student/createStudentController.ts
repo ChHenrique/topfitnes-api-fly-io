@@ -1,14 +1,14 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { studentSchema, studentSchemaDTO } from "src/schemas/studentSchema";
-import { createStudent } from "src/services/database/IStudentRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { studentSchema, studentSchemaDTO } from "../../schemas/studentSchema";
+import { createStudent } from "../../services/database/IStudentRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
 import bcrypt from "bcrypt";
-import { createUserPhotoMultipart } from "src/utils/photoMultipart";
-import { typeUploads } from "src/types/typeUploads";
-import { getPlan } from "src/services/database/IPlanRepository";
-import { calculateValidity } from "src/utils/calculateValidity";
-import { verifyEmailOrPhoneExist } from "src/utils/verifyEmailOrPhoneExist";
+import { createUserPhotoMultipart } from "../../utils/photoMultipart";
+import { typeUploads } from "../../types/typeUploads";
+import { getPlan } from "../../services/database/IPlanRepository";
+import { calculateValidity } from "../../utils/calculateValidity";
+import { verifyEmailOrPhoneExist } from "../../utils/verifyEmailOrPhoneExist";
 
 export async function createStudentController(fastify: fastifyContextDTO) {
     const user = fastify.req.user;

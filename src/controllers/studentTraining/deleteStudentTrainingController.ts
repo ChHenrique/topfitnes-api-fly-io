@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { deleteStudentTraining } from "src/services/database/studentTrainingRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { deleteStudentTraining } from "../../services/database/studentTrainingRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function deleteStudentTrainingController(fastify: fastifyContextDTO) {
     const { user, params } = fastify.req;

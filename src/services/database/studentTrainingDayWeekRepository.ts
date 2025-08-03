@@ -1,4 +1,4 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma";
 import { DiaSemana } from "@prisma/client";
 
 export async function getWeekDaysByStudentTraining(studentTrainingId: string) {

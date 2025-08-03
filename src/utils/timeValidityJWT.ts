@@ -1,4 +1,4 @@
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../services/serverError";
 
 export function timeValidityJWT(date: Date): number {
   const now = new Date();

@@ -1,13 +1,13 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { adminSchema, AdminSchemaDTO } from "src/schemas/adminSchema";
-import { createAdmin, getAdminByEmail, getAdminByPhone } from "src/services/database/IAdminRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { adminSchema, AdminSchemaDTO } from "../../schemas/adminSchema";
+import { createAdmin, getAdminByEmail, getAdminByPhone } from "../../services/database/IAdminRepository";
+import { ServerError } from "../../services/serverError";
 import bcrypt from "bcrypt";
 
-import { typeUploads } from "src/types/typeUploads";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { createUserPhotoMultipart } from "src/utils/photoMultipart";
-import { verifyEmailOrPhoneExist } from "src/utils/verifyEmailOrPhoneExist";
+import { typeUploads } from "../../types/typeUploads";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { createUserPhotoMultipart } from "../../utils/photoMultipart";
+import { verifyEmailOrPhoneExist } from "../../utils/verifyEmailOrPhoneExist";
 
 export async function createAdminController(fastify: fastifyContextDTO) {
 

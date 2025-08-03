@@ -1,6 +1,6 @@
 import { Role } from "@prisma/client";
-import { prisma } from "src/config/prisma";
-import { PersonalSchemaDTO } from "src/schemas/personalSchema";
+import { prisma } from "../../config/prisma";
+import { PersonalSchemaDTO } from "../../schemas/personalSchema";
 import { ServerError } from "../serverError";
 
 export async function createPersonal(data: PersonalSchemaDTO){

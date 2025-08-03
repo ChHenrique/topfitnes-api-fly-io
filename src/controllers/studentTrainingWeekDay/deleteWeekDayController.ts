@@ -1,7 +1,7 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { deleteWeekDay } from "src/services/database/studentTrainingDayWeekRepository";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { deleteWeekDay } from "../../services/database/studentTrainingDayWeekRepository";
 
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../../services/serverError";
 
 export async function deleteWeekDayController(fastify: fastifyContextDTO) {
   const { id } = fastify.req.params as { id: string };

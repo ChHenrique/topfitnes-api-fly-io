@@ -1,5 +1,5 @@
-import { getUserByEmail, getUserByPhone } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
+import { getUserByEmail, getUserByPhone } from "../services/database/IUserRepository";
+import { ServerError } from "../services/serverError";
 
 export async function verifyEmailOrPhoneExist(parsedData: any) {
     if (parsedData.data.email) {

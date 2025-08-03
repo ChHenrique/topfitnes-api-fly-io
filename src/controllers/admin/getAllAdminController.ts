@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getAllAdmins } from "src/services/database/IAdminRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getAllAdmins } from "../../services/database/IAdminRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getAllAdminController(fastify: fastifyContextDTO){
     const user = fastify.req.user;

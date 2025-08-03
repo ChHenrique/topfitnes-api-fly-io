@@ -1,4 +1,4 @@
-import { prisma } from "src/config/prisma";
+import { prisma } from "../../config/prisma";
 
 export async function getPlan(id: string){
     const plan = await prisma.plano.findUnique({

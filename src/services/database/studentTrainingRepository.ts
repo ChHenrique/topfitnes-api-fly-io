@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { studentTrainingDTO } from "src/schemas/studentTrainingSchema";
+import { prisma } from "../../config/prisma";
+import { studentTrainingDTO } from "../../schemas/studentTrainingSchema";
 
 
 export async function createStudentTraining(data: studentTrainingDTO) {
@@ -16,12 +16,15 @@ export async function getStudentTrainingById(aluno_id: string) {
   });
 }
 
-export async function updateStudentTraining(id: string, concluido: boolean) {
+ export async function updateStudentTraining(id: string, aluno_id: string, treino_id: string) {
   return await prisma.alunoTreino.update({
-    where: { id },
-    data: { concluido }
+   where: { id },
+    data: { 
+      aluno_id,
+      treino_id
+     }
   });
-}
+ }
 
 export async function deleteStudentTraining(id: string) {
   return await prisma.alunoTreino.delete({

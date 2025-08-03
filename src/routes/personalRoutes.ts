@@ -1,15 +1,15 @@
 import { FastifyInstance } from "fastify";
-import { createPersonalController } from "src/controllers/personal/createPersonalController";
-import { deletePersonalController } from "src/controllers/personal/deletePersonalController";
-import { getAllPersonalController } from "src/controllers/personal/getAllPersonalController";
-import { getPersonalController } from "src/controllers/personal/getPersonalController";
-import { loginPersonalController } from "src/controllers/personal/loginPersonalController";
-import { logoutPersonalController } from "src/controllers/personal/logoutPersonalController";
-import { updatePersonalController } from "src/controllers/personal/updatePersonalController";
-import { newStudentsOfTheMonthController } from "src/controllers/personal/newStudentsOfTheMonthController";
-import { overdueStudentByPersonalController } from "src/controllers/personal/overdueStudentPersonalController";
-import { authMiddleware } from "src/middlewares/authMiddleware";
-import { getPersonalByToken } from "src/controllers/personal/getPersonalByToken";
+import { createPersonalController } from "../controllers/personal/createPersonalController";
+import { deletePersonalController } from "../controllers/personal/deletePersonalController";
+import { getAllPersonalController } from "../controllers/personal/getAllPersonalController";
+import { getPersonalController } from "../controllers/personal/getPersonalController";
+import { loginPersonalController } from "../controllers/personal/loginPersonalController";
+import { logoutPersonalController } from "../controllers/personal/logoutPersonalController";
+import { updatePersonalController } from "../controllers/personal/updatePersonalController";
+import { newStudentsOfTheMonthController } from "../controllers/personal/newStudentsOfTheMonthController";
+import { overdueStudentByPersonalController } from "../controllers/personal/overdueStudentPersonalController";
+import { authMiddleware } from "../middlewares/authMiddleware";
+import { getPersonalByToken } from "../controllers/personal/getPersonalByToken";
 
 export async function personalRoutes(fastify: FastifyInstance) {
     fastify.post("/personal/register", { preHandler: authMiddleware }, async (req, res) => await createPersonalController({ req, res }));

@@ -4,7 +4,7 @@ import fp from 'fastify-plugin';
 import fastifyIO from 'fastify-socket.io';
 import { Socket } from 'socket.io';
 import jwt from 'jsonwebtoken'
-import { setIO } from 'src/services/socketIOSigleton';
+import { setIO } from '../services/socketIOSigleton';
 
 export default fp(async (fastify: FastifyInstance) => {
     fastify.register(fastifyIO, {

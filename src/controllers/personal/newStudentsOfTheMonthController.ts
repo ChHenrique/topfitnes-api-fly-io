@@ -1,9 +1,9 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getPersonalByEmail, getPersonalById } from "src/services/database/IPersonalRepository";
-import { newStudentsOfTheMonth } from "src/services/database/IStudentRepository";
-import { getUserById } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
-import { checkAccessWithPersonal } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getPersonalByEmail, getPersonalById } from "../../services/database/IPersonalRepository";
+import { newStudentsOfTheMonth } from "../../services/database/IStudentRepository";
+import { getUserById } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
+import { checkAccessWithPersonal } from "../../utils/checkAccess";
 
 export async function newStudentsOfTheMonthController(fastify: fastifyContextDTO) {
     const thisUserIsAuthorized = await checkAccessWithPersonal(fastify, getUserById);

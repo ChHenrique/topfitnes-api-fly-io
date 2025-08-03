@@ -1,9 +1,9 @@
 import { FastifyInstance } from "fastify";
-import { authMiddleware } from "src/middlewares/authMiddleware";
-import { createWeekDaysController } from "src/controllers/studentTrainingWeekDay/createWeekDaysController";
-import { getWeekDaysByStudentTrainingController } from "src/controllers/studentTrainingWeekDay/getWeekDaysByStudentTrainingController";
-import { deleteWeekDayController } from "src/controllers/studentTrainingWeekDay/deleteWeekDayController";
-import { updateWeekDayController } from "src/controllers/studentTrainingWeekDay/updateWeekDayController";
+import { authMiddleware } from "../middlewares/authMiddleware";
+import { createWeekDaysController } from "../controllers/studentTrainingWeekDay/createWeekDaysController";
+import { getWeekDaysByStudentTrainingController } from "../controllers/studentTrainingWeekDay/getWeekDaysByStudentTrainingController";
+import { deleteWeekDayController } from "../controllers/studentTrainingWeekDay/deleteWeekDayController";
+import { updateWeekDayController } from "../controllers/studentTrainingWeekDay/updateWeekDayController";
 
 export async function studentTrainingWeekDayRoutes(fastify: FastifyInstance) {
     fastify.post('/student-training/weekday', { preHandler: authMiddleware }, async (req, res) =>

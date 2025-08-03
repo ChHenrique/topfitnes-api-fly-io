@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getWeekDaysByStudentTraining } from "src/services/database/studentTrainingDayWeekRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getWeekDaysByStudentTraining } from "../../services/database/studentTrainingDayWeekRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getWeekDaysByStudentTrainingController(fastify: fastifyContextDTO) {
   const { alunoTreinoId } = fastify.req.params as { alunoTreinoId: string };

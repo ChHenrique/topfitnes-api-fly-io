@@ -1,12 +1,12 @@
 import { FastifyInstance } from "fastify";
-import { createTemporaryStudentController } from "src/controllers/temporaryStudent/createTemporaryStudentController";
-import { deleteTemporaryStudentController } from "src/controllers/temporaryStudent/deleteTemporaryStudentController";
-import { getAllTemporaryStudentAcceptsController } from "src/controllers/temporaryStudent/getAllTemporaryStudentAcceptController";
-import { getAllTemporaryStudentController } from "src/controllers/temporaryStudent/getAllTemporaryStudentController";
-import { getTemporaryStudentController } from "src/controllers/temporaryStudent/getTemporaryStudentController";
-import { updateTemporaryStudentController } from "src/controllers/temporaryStudent/updateTemporaryStudentController";
-import { authMiddleware } from "src/middlewares/authMiddleware";
-import { getTemporaryStudent } from "src/services/database/ITemporaryStudentRepository";
+import { createTemporaryStudentController } from "../controllers/temporaryStudent/createTemporaryStudentController";
+import { deleteTemporaryStudentController } from "../controllers/temporaryStudent/deleteTemporaryStudentController";
+import { getAllTemporaryStudentAcceptsController } from "../controllers/temporaryStudent/getAllTemporaryStudentAcceptController";
+import { getAllTemporaryStudentController } from "../controllers/temporaryStudent/getAllTemporaryStudentController";
+import { getTemporaryStudentController } from "../controllers/temporaryStudent/getTemporaryStudentController";
+import { updateTemporaryStudentController } from "../controllers/temporaryStudent/updateTemporaryStudentController";
+import { authMiddleware } from "../middlewares/authMiddleware";
+import { getTemporaryStudent } from "../services/database/ITemporaryStudentRepository";
 
 export async function temporaryStudentRoutes(fastify: FastifyInstance){
     fastify.post('/temporaryStudent', async (req, res) => await createTemporaryStudentController({req, res}));

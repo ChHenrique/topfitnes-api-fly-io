@@ -1,8 +1,8 @@
 import { FastifyRequest } from "fastify";
 import jwt from "jsonwebtoken";
 import { env } from "process";
-import { ServerError } from "src/services/serverError";
-import { userDTO } from "src/types/user";
+import { ServerError } from "../services/serverError";
+import { userDTO } from "../types/user";
 
 export async function authMiddleware(req: FastifyRequest){
     const token = req.cookies.token;

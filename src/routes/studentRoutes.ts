@@ -1,17 +1,17 @@
 import { FastifyInstance } from "fastify";
 import { get } from "http";
-import { createStudentController } from "src/controllers/student/createStudentController";
-import { deleteStudentController } from "src/controllers/student/deleteStudentController";
-import { getAllStudentsController } from "src/controllers/student/getAllStudentController";
-import { getStudentController } from "src/controllers/student/getStundentController";
-import { loginStudentController } from "src/controllers/student/loginStudentController";
-import { logoutStudentController } from "src/controllers/student/logoutStudentController";
-import { notifyStudentCOntroller } from "src/controllers/student/notifyStudentController";
-import { overdueStudentByPersonalController, overdueStudentController } from "src/controllers/personal/overdueStudentPersonalController";
-import { updateStudentController } from "src/controllers/student/updateStudentController";
-import { updateValidityController } from "src/controllers/admin/updateValidityStudentController";
-import { authMiddleware } from "src/middlewares/authMiddleware";
-import { getAllPlanController } from "src/controllers/plan/getAllPlanController";
+import { createStudentController } from "../controllers/student/createStudentController";
+import { deleteStudentController } from "../controllers/student/deleteStudentController";
+import { getAllStudentsController } from "../controllers/student/getAllStudentController";
+import { getStudentController } from "../controllers/student/getStundentController";
+import { loginStudentController } from "../controllers/student/loginStudentController";
+import { logoutStudentController } from "../controllers/student/logoutStudentController";
+import { notifyStudentCOntroller } from "../controllers/student/notifyStudentController";
+import { overdueStudentByPersonalController, overdueStudentController } from "../controllers/personal/overdueStudentPersonalController";
+import { updateStudentController } from "../controllers/student/updateStudentController";
+import { updateValidityController } from "../controllers/admin/updateValidityStudentController";
+import { authMiddleware } from "../middlewares/authMiddleware";
+import { getAllPlanController } from "../controllers/plan/getAllPlanController";
 
 export async function studentRoutes(fastify: FastifyInstance) {
     fastify.post("/student/register", { preHandler: authMiddleware }, async (req, res) => await createStudentController({ req, res }));

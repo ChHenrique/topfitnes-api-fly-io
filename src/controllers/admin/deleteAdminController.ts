@@ -1,8 +1,8 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { deleteAdmin, getAdminByEmail, getAdminById } from "src/services/database/IAdminRepository";
-import { getUserById } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
-import { checkAccess } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { deleteAdmin, getAdminByEmail, getAdminById } from "../../services/database/IAdminRepository";
+import { getUserById } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
+import { checkAccess } from "../../utils/checkAccess";
 
 export async function deleteAdminController(fastify: fastifyContextDTO){
     const isAdminExist = await checkAccess(fastify, getUserById);

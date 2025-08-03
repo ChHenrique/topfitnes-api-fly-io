@@ -1,5 +1,5 @@
-import { photoStorageService } from "src/services/photoStorageService";
-import { typeUploads } from "src/types/typeUploads";
+import { photoStorageService } from "../services/photoStorageService";
+import { typeUploads } from "../types/typeUploads";
 
 export async function createUserPhotoMultipart(rawData: any, parsedData: any, typeUploads: typeUploads) {
     const foto = rawData.foto;

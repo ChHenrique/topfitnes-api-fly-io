@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getPersonalByEmail } from "src/services/database/IPersonalRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getPersonalByEmail } from "../../services/database/IPersonalRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getPersonalByToken(fastify: fastifyContextDTO){
     const user = fastify.req.user;

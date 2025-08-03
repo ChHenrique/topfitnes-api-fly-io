@@ -1,13 +1,13 @@
 import { Aluno } from "@prisma/client";
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getPlan } from "src/services/database/IPlanRepository";
-import { getStudentById, updateValidity } from "src/services/database/IStudentRepository";
-import { ServerError } from "src/services/serverError";
-import { calculateValidity } from "src/utils/calculateValidity";
-import { checkAccessWithPersonal } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getPlan } from "../../services/database/IPlanRepository";
+import { getStudentById, updateValidity } from "../../services/database/IStudentRepository";
+import { ServerError } from "../../services/serverError";
+import { calculateValidity } from "../../utils/calculateValidity";
+import { checkAccessWithPersonal } from "../../utils/checkAccess";
 import jwt from "jsonwebtoken"
-import { timeValidityJWT } from "src/utils/timeValidityJWT";
-import { payloadJWT } from "src/utils/payloadJWT";
+import { timeValidityJWT } from "../../utils/timeValidityJWT";
+import { payloadJWT } from "../../utils/payloadJWT";
 
 export async function updateValidityController(fastify: fastifyContextDTO) {
     const user = fastify.req.user;

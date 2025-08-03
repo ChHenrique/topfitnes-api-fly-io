@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
-import { loginUserController } from "src/controllers/auth/loginUser";
-import { logOutUserController } from "src/controllers/auth/logoutUser";
-import { authMiddleware } from "src/middlewares/authMiddleware";
+import { loginUserController } from "../controllers/auth/loginUser";
+import { logOutUserController } from "../controllers/auth/logoutUser";
+import { authMiddleware } from "../middlewares/authMiddleware";
 
 export async function authRoutes(fastify: FastifyInstance){
     fastify.post("/login", async (req, res) => await loginUserController({req, res}))

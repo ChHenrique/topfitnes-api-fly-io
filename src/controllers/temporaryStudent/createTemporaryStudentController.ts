@@ -1,7 +1,7 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { temporaryStudentSchema, temporaryStudentSchemaDTO } from "src/schemas/temporaryStudentSchema";
-import { createTemporaryStudent } from "src/services/database/ITemporaryStudentRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { temporaryStudentSchema, temporaryStudentSchemaDTO } from "../../schemas/temporaryStudentSchema";
+import { createTemporaryStudent } from "../../services/database/ITemporaryStudentRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function createTemporaryStudentController(fastify: fastifyContextDTO){
     const data = fastify.req.body as temporaryStudentSchemaDTO;

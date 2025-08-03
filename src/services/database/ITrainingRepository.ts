@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { TrainingSchemaDTO } from "src/schemas/trainingSchema";
+import { prisma } from "../../config/prisma";
+import { TrainingSchemaDTO } from "../../schemas/trainingSchema";
 
 export async function getAllTrainings() {
     return await prisma.treino.findMany({

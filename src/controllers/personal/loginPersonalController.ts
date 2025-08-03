@@ -1,10 +1,10 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { loginPersonalSchema, LoginPersonalSchemaDTO } from "src/schemas/personalSchema";
-import { getPersonalByEmail, getPersonalByPhone } from "src/services/database/IPersonalRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { loginPersonalSchema, LoginPersonalSchemaDTO } from "../../schemas/personalSchema";
+import { getPersonalByEmail, getPersonalByPhone } from "../../services/database/IPersonalRepository";
+import { ServerError } from "../../services/serverError";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { payloadJWT } from "src/utils/payloadJWT";
+import { payloadJWT } from "../../utils/payloadJWT";
 
 export async function loginPersonalController(fastify: fastifyContextDTO){
     const data = fastify.req.body as LoginPersonalSchemaDTO;

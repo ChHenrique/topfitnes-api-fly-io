@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getAllTemporaryStudentsAccepts } from "src/services/database/ITemporaryStudentRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getAllTemporaryStudentsAccepts } from "../../services/database/ITemporaryStudentRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function getAllTemporaryStudentAcceptsController(fastify: fastifyContextDTO) {
     /* 

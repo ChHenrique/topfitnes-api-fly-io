@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getUserById } from "src/services/database/IUserRepository";
-import { checkAccess } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getUserById } from "../../services/database/IUserRepository";
+import { checkAccess } from "../../utils/checkAccess";
 
 export async function getAdminController(fastify: fastifyContextDTO){
     const isAdminExist = await checkAccess(fastify, getUserById);

@@ -1,8 +1,8 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getPersonalByEmail } from "src/services/database/IPersonalRepository";
-import { getUserById } from "src/services/database/IUserRepository";
-import { ServerError } from "src/services/serverError";
-import { checkAccess } from "src/utils/checkAccess";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getPersonalByEmail } from "../../services/database/IPersonalRepository";
+import { getUserById } from "../../services/database/IUserRepository";
+import { ServerError } from "../../services/serverError";
+import { checkAccess } from "../../utils/checkAccess";
 
 export async function getPersonalController(fastify: fastifyContextDTO){
     const verification = await checkAccess(fastify, getUserById);

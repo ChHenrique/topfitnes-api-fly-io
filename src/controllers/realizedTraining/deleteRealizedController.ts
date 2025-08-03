@@ -1,6 +1,6 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { deleteRealizedTraining } from "src/services/database/realizedTrainingRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { deleteRealizedTraining } from "../../services/database/realizedTrainingRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function deleteRealizedTrainingController(fastify: fastifyContextDTO) {
     const { id } = fastify.req.params as { id: string };

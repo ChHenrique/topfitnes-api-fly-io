@@ -1,11 +1,11 @@
 import { FastifyInstance } from "fastify";
-import { createStudentTrainingController } from "src/controllers/studentTraining/createStudentTrainingController";
-import { deleteStudentTrainingController } from "src/controllers/studentTraining/deleteStudentTrainingController";
-import { getStudentTrainingByIdController } from "src/controllers/studentTraining/getStudentTrainingByIdController";
-import { updateStudentTrainingController } from "src/controllers/studentTraining/updateStudentTrainingController";
+import { createStudentTrainingController } from "../controllers/studentTraining/createStudentTrainingController";
+import { deleteStudentTrainingController } from "../controllers/studentTraining/deleteStudentTrainingController";
+import { getStudentTrainingByIdController } from "../controllers/studentTraining/getStudentTrainingByIdController";
+import { updateStudentTrainingController } from "../controllers/studentTraining/updateStudentTrainingController";
 
 
-import { authMiddleware } from "src/middlewares/authMiddleware";
+import { authMiddleware } from "../middlewares/authMiddleware";
 
 export async function studentTrainingRoutes(fastify: FastifyInstance) {
     fastify.post('/student-training/create', { preHandler: authMiddleware }, async (req, res) => await createStudentTrainingController({ req, res }));

@@ -2,8 +2,8 @@ import { mkdirSync } from "fs";
 import { join } from "path";
 import { IPhotoStorageDTO } from "../utils/IPhotoStorage";
 import { save } from "../utils/savePhoto";
-import { roleUser } from "src/interfaces/roleUser";
-import { typeUploads } from "src/types/typeUploads";
+import { roleUser } from "../interfaces/roleUser";
+import { typeUploads } from "../types/typeUploads";
 
 export function photoStorageService(data: IPhotoStorageDTO, type: typeUploads) {
     const uploads = "uploads";

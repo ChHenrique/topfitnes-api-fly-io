@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { AdminSchemaDTO } from "src/schemas/adminSchema";
+import { prisma } from "../../config/prisma";
+import { AdminSchemaDTO } from "../../schemas/adminSchema";
 import { Role } from "@prisma/client";
 import { ServerError } from "../serverError";
 

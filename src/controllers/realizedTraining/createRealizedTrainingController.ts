@@ -1,7 +1,7 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { realizedTrainingSchema, realizedTrainingSchemaDTO } from "src/schemas/realizedTrainingSchema";
-import { createRealizedTraining } from "src/services/database/realizedTrainingRepository";
-import { ServerError } from "src/services/serverError";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { realizedTrainingSchema, realizedTrainingSchemaDTO } from "../../schemas/realizedTrainingSchema";
+import { createRealizedTraining } from "../../services/database/realizedTrainingRepository";
+import { ServerError } from "../../services/serverError";
 
 export async function createRealizedTrainingController(fastify: fastifyContextDTO) {
     const user = fastify.req.user;

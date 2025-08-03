@@ -1,7 +1,7 @@
 import { FastifyInstance } from "fastify";
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { ServerError } from "src/services/serverError";
-import { notifyAluno } from "src/services/socketIOSigleton";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { ServerError } from "../../services/serverError";
+import { notifyAluno } from "../../services/socketIOSigleton";
 
 export async function notifyStudentCOntroller(fastify: fastifyContextDTO){
     const user = fastify.req.user;

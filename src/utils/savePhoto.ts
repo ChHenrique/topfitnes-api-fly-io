@@ -2,7 +2,7 @@ import { randomUUID } from "crypto";
 import { IPhotoStorageDTO } from "./IPhotoStorage";
 import { join } from "path";
 import { writeFile } from "fs/promises";
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../services/serverError";
 import { fileType } from "./fileType";
 
 export async function save(typeUploads: {}, data: IPhotoStorageDTO, type: string): Promise<string> {

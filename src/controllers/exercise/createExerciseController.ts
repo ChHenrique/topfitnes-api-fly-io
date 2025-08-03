@@ -1,11 +1,10 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { exerciseDTO, exerciseSchema } from "src/schemas/exerciseSchema";
-import { createExercise } from "src/services/database/IExercisesRepository";
-import { createTraining } from "src/services/database/ITrainingRepository";
-import { normalizeMultipartBody } from "src/services/normalizeMultipartBody";
-import { ServerError } from "src/services/serverError";
-import { typeUploads } from "src/types/typeUploads";
-import { createUserPhotoMultipart } from "src/utils/photoMultipart";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { exerciseDTO, exerciseSchema } from "../../schemas/exerciseSchema";
+import { createExercise } from "../../services/database/IExercisesRepository";
+import { normalizeMultipartBody } from "../../services/normalizeMultipartBody";
+import { ServerError } from "../../services/serverError";
+import { typeUploads } from "../../types/typeUploads";
+import { createUserPhotoMultipart } from "../../utils/photoMultipart";
 
 export async function createExerciseController(fastify: fastifyContextDTO) {
     const { user, body } = fastify.req;

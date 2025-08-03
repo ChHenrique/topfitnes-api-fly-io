@@ -1,7 +1,7 @@
-import { fastifyContextDTO } from "src/interfaces/fastifyContextDTO";
-import { getAllExercises } from "src/services/database/IExercisesRepository";
+import { fastifyContextDTO } from "../../interfaces/fastifyContextDTO";
+import { getAllExercises } from "../../services/database/IExercisesRepository";
 
-import { ServerError } from "src/services/serverError";
+import { ServerError } from "../../services/serverError";
 
 export async function getAllExerciseController(fastify: fastifyContextDTO) {
     const { user } = fastify.req;

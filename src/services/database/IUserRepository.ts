@@ -1,5 +1,5 @@
-import { prisma } from "src/config/prisma";
-import { userSchemaDTO } from "src/schemas/userSchema";
+import { prisma } from "../../config/prisma";
+import { userSchemaDTO } from "../../schemas/userSchema";
 
 export async function createUsers(data: userSchemaDTO){
     const user = prisma.usuario.create({
