@@ -4,11 +4,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "dev": "tsx --watch src/server.ts",
-    "generate": "prisma generate",
-    "migrate": "prisma migrate dev"
-  },
+"scripts": {
+  "dev": "tsx src/server.ts",
+  "build": "tsc",
+  "start": "node -r tsconfig-paths/register dist/server.js",
+  "generate": "prisma generate",
+  "migrate": "prisma migrate dev"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -28,6 +30,7 @@
     "jsonwebtoken": "^9.0.2",
     "node-cron": "^4.2.1",
     "socket.io": "^4.8.1",
+    "tsconfig-paths": "^4.2.0",
     "zod": "^4.0.5"
   },
   "devDependencies": {

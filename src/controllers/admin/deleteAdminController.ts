@@ -10,6 +10,6 @@ export async function deleteAdminController(fastify: fastifyContextDTO){
     const admin = await getAdminByEmail(isAdminExist.email);
     if (!admin) throw new ServerError("Admin não encontrado", 404)
     
-    await deleteAdmin(admin.usuario_id, isAdminExist.id);
+    await deleteAdmin(admin.usuario_id);
     fastify.res.status(200).send({ message: "Administrador deletado com sucesso" });
 }
