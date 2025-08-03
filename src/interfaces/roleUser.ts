@@ -1,0 +1,1 @@
+export type roleUser = 'ADMINISTRADOR' | 'PERSONAL' | 'ALUNO';

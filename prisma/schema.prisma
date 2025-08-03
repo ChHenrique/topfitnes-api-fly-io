@@ -1,0 +1,192 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = env("DATABASE_URL")
+}
+
+enum Role {
+    ADMINISTRADOR
+    PERSONAL
+    ALUNO
+}
+
+enum TipoPlano {
+    MENSAL
+    TRIMESTRAL
+    SEMESTRAL
+    ANUAL
+}
+
+enum Sexo {
+    MASCULINO
+    FEMININO
+    PREFIRO_NAO_DIZER
+}
+
+enum FocoTreino {
+    PERDER_PESO
+    GANHAR_MASSA
+    MANTER_A_FORMA
+}
+
+enum FocoCorpo {
+    PEITO
+    BRACOS
+    COSTAS
+    GLUTEOS
+    PERNAS
+}
+
+enum DiaSemana {
+    DOMINGO
+    SEGUNDA
+    TERCA
+    QUARTA
+    QUINTA
+    SEXTA
+    SABADO
+}
+
+model Aluno {
+    id                     String        @id @default(uuid())
+    usuario_id             String        @unique
+    usuario                Usuario       @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+    role                   Role          @default(ALUNO)
+    nome                   String?
+    treino_dias_por_semana Int?
+    sobrenome              String?
+    foto                   String
+    sexo                   Sexo          @default(PREFIRO_NAO_DIZER)
+    foco_treino            FocoTreino?
+    peso                   Float?
+    altura                 Float?
+    idade                  Int?
+    data_matricula         DateTime?
+    email                  String?       @unique
+    senha                  String
+    telefone               String?       @unique
+    foco_corpo             FocoCorpo?
+    plano_id               String?
+    plano                  Plano?        @relation(fields: [plano_id], references: [id])
+    treinos_aluno          AlunoTreino[]
+    personal_id            String?
+    personal               Personal?     @relation(fields: [personal_id], references: [id], onDelete: Cascade)
+    criado_em              DateTime      @default(now())
+    observacao             String?
+    data_validade_plano    DateTime
+}
+
+model Plano {
+    id           String    @id @default(uuid())
+    tipo_plano   TipoPlano
+    duracaoMeses Int
+    valor        Decimal
+    alunos       Aluno[]
+}
+
+model Administrador {
+    id         String   @id @default(uuid())
+    usuario_id String   @unique
+    usuario    Usuario  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+    role       Role     @default(ADMINISTRADOR)
+    nome       String
+    sobrenome  String
+    foto       String
+    telefone   String   @unique
+    senha      String
+    email      String   @unique
+    criado_em  DateTime @default(now())
+}
+
+model Personal {
+    id                    String   @id @default(uuid())
+    usuario_id            String   @unique
+    usuario               Usuario  @relation(fields: [usuario_id], references: [id], onDelete: Cascade)
+    role                  Role     @default(PERSONAL)
+    nome                  String
+    sobrenome             String
+    foto                  String
+    telefone              String?  @unique
+    senha                 String
+    email                 String?  @unique
+    formacao              String?
+    registro_profissional String?
+    especialidade         String?
+    disponibilidade       String?
+    treinos_criados       Treino[] @relation("PersonalTreinos")
+    alunos                Aluno[]
+    criado_em             DateTime @default(now())
+}
+
+model Treino {
+    id         String        @id @default(uuid())
+    nome       String
+    descricao  String
+    foco_corpo FocoCorpo
+    foto       String?
+    exercicios Exercicio[]
+    alunos     AlunoTreino[]
+    criador_id String
+    criador    Personal      @relation("PersonalTreinos", fields: [criador_id], references: [id], onDelete: Cascade)
+    criado_em  DateTime      @default(now())
+}
+
+model Exercicio {
+    id                 String  @id @default(uuid())
+    nome               String
+    foto               String?
+    descricao          String
+    repeticoes         Int
+    execucoes          Int
+    intervalo_descanso Int
+    treino_id          String
+    treino             Treino  @relation(fields: [treino_id], references: [id], onDelete: Cascade)
+}
+
+model AlunoTreino {
+    id                String                 @id @default(uuid())
+    aluno_id          String
+    treino_id         String
+    aluno             Aluno                  @relation(fields: [aluno_id], references: [id])
+    treino            Treino                 @relation(fields: [treino_id], references: [id])
+    dias_semana       AlunoTreinoDiaSemana[]
+    treinosRealizados TreinoRealizado[]
+}
+
+model TreinoRealizado {
+    id            String      @id @default(uuid())
+    alunoTreinoId String
+    data          DateTime
+    alunoTreino   AlunoTreino @relation(fields: [alunoTreinoId], references: [id], onDelete: Cascade)
+
+    @@unique([alunoTreinoId, data])
+}
+
+model AlunoTreinoDiaSemana {
+    id            String      @id @default(uuid())
+    alunoTreinoId String
+    diaSemana     DiaSemana
+    alunoTreino   AlunoTreino @relation(fields: [alunoTreinoId], references: [id], onDelete: Cascade)
+}
+
+model AlunosTemporarios {
+    id       String  @id @default(uuid())
+    nome     String
+    email    String
+    telefone String
+    status   Boolean
+}
+
+model Usuario {
+    id            String         @id @default(uuid())
+    role          Role           @default(ALUNO)
+    email         String?        @unique
+    telefone      String?        @unique
+    senha         String
+    aluno         Aluno?
+    personal      Personal?
+    administrador Administrador?
+}
